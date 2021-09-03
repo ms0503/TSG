@@ -30,6 +30,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * アプリケーション
@@ -38,7 +39,11 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
     private static final Map<String, Boolean> flags = Maps.newHashMap();
+    private static AnimationTimer gameLoop;
+    // 5分
+    private static long timeLimit = 300000000000L;
     private Controller controller;
+    private long start_ts = 0L;
     
     /**
      * メインメソッド
@@ -46,6 +51,7 @@ public class Main extends Application {
      * @param args コマンドライン引数
      */
     public static void main(String[] args) {
+        if(args.length > 0) timeLimit = Long.parseLong(args[0]);
         flags.put("bullet.1.isFire", false);
         flags.put("bullet.2.isFire", false);
         flags.put("bullet.3.isFire", false);
@@ -74,18 +80,27 @@ public class Main extends Application {
         stage.show();
         scene.setOnKeyPressed(this::onKeyPressed);
         scene.setOnKeyReleased(this::onKeyReleased);
-        new AnimationTimer() {
+        gameLoop = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                loop();
+                if(start_ts == 0L) start_ts = now;
+                loop(now);
             }
-        }.start();
+        };
+        gameLoop.start();
+        stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
     }
     
     /**
      * ゲームループ
+     *
+     * @param ts フレームのタイムスタンプ(ナノ秒)
      */
-    private void loop() {
+    private void loop(long ts) {
+        if(ts - start_ts >= timeLimit) {
+            gameLoop.stop();
+            return;
+        }
         if(flags.get("player.isLeft") && controller.getPlayer().getX() > -590.0D) controller.getPlayer().setX(controller.getPlayer().getX() - 10.0D);
         if(flags.get("player.isRight") && controller.getPlayer().getX() < 590.0D) controller.getPlayer().setX(controller.getPlayer().getX() + 10.0D);
         for(int i = 0; i < 5; i++) {
@@ -99,7 +114,8 @@ public class Main extends Application {
                 controller.getBullets()[i].setY(controller.getPlayer().getY() - 2.0D);
             }
         }
-        controller.getDebug().setText("Pos:" + controller.getPlayer().getX() + "," + controller.getPlayer().getY());
+        //controller.getDebug().setText("Pos:" + controller.getPlayer().getX() + "," + controller.getPlayer().getY());
+        controller.getDebug().setText("Time: " + (timeLimit - ts + start_ts) + "s / " + timeLimit + "s");
     }
     
     /**

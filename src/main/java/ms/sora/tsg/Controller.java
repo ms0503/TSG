@@ -47,6 +47,48 @@ public class Controller implements Initializable {
     @FXML
     private ImageView bullet5;
     @FXML
+    private ImageView enemy00;
+    @FXML
+    private ImageView enemy01;
+    @FXML
+    private ImageView enemy02;
+    @FXML
+    private ImageView enemy03;
+    @FXML
+    private ImageView enemy04;
+    @FXML
+    private ImageView enemy05;
+    @FXML
+    private ImageView enemy06;
+    @FXML
+    private ImageView enemy10;
+    @FXML
+    private ImageView enemy11;
+    @FXML
+    private ImageView enemy12;
+    @FXML
+    private ImageView enemy13;
+    @FXML
+    private ImageView enemy14;
+    @FXML
+    private ImageView enemy15;
+    @FXML
+    private ImageView enemy16;
+    @FXML
+    private ImageView enemy20;
+    @FXML
+    private ImageView enemy21;
+    @FXML
+    private ImageView enemy22;
+    @FXML
+    private ImageView enemy23;
+    @FXML
+    private ImageView enemy24;
+    @FXML
+    private ImageView enemy25;
+    @FXML
+    private ImageView enemy26;
+    @FXML
     private ImageView player;
     @FXML
     private Label debug;
@@ -77,6 +119,14 @@ public class Controller implements Initializable {
      */
     public Label getDebug() {
         return debug;
+    }
+    
+    public ImageView[][] getEnemies() {
+        return new ImageView[][] {
+            {enemy00, enemy01, enemy02, enemy03, enemy04, enemy05, enemy06},
+            {enemy10, enemy11, enemy12, enemy13, enemy14, enemy15, enemy16},
+            {enemy20, enemy21, enemy22, enemy23, enemy24, enemy25, enemy26}
+        };
     }
     
     /**

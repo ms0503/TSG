@@ -32,7 +32,7 @@
         </Menu>
     </MenuBar>
     <AnchorPane prefHeight="415.0" prefWidth="701.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
-        <ImageView fx:id="player" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="40.0" fitWidth="120.0" layoutX="580.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="player" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="40.0" fitWidth="120.0" layoutX="576.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" smooth="false">
             <Image url="@player.png" />
         </ImageView>
         <ImageView fx:id="bullet1" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" layoutX="636.0" layoutY="599.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
@@ -51,5 +51,110 @@
             <Image url="@bullet.png" />
         </ImageView>
         <Label fx:id="debug" layoutX="14.0" layoutY="14.0" text="DEBUG" textFill="WHITE" />
+      <ImageView fx:id="enemy13" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="612.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy15" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="912.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy11" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="312.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy12" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="462.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy14" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="762.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy10" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="162.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy16" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="1062.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy00" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="162.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy01" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="312.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy02" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="462.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy06" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="1062.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy05" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="912.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy04" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="762.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy03" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="612.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy23" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="612.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy24" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="762.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy25" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="912.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy26" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="1062.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy22" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="462.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy21" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="312.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy20" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="114.0" fitWidth="48.0" layoutX="162.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+         <image>
+            <Image url="@enemy.png" />
+         </image>
+      </ImageView>
     </AnchorPane>
 </VBox>
