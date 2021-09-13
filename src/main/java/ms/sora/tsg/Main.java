@@ -30,6 +30,7 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -214,31 +215,33 @@ public class Main extends Application {
             // 敵の折り返し
             if(isFifteenSecondsLater) flags.put("enemy." + i + ".isTurned", !flags.get("enemy." + i + ".isTurned"));
             for(int j = 0; j < 7; j++) {
-                // 敵の移動
-                if(isASecondLater && !flags.get("enemy." + i + j + ".isDead")) {
-                    if(flags.get("enemy." + i + ".isTurned")) controller.getEnemies()[i][j].setX(controller.getEnemies()[i][j].getX() + 10.0D);
-                    else controller.getEnemies()[i][j].setX(controller.getEnemies()[i][j].getX() - 10.0D);
-                }
-                // 敵の弾管理
-                // Y640.0は一番下
-                if(flags.get("bullet." + i + j + ".isFire")) {
-                    if(controller.getEnemyBullets()[i][j].getY() < 640.0D) {
-                        controller.getEnemyBullets()[i][j].setVisible(true);
-                        controller.getEnemyBullets()[i][j].setY(controller.getEnemyBullets()[i][j].getY() + 4.0D);
-                        // プレイヤーの当たり判定
-                        if(controller.getEnemyBullets()[i][j].getY() > 600.0D && controller.getPlayer().getX() + 17.5D <= controller.getEnemyBullets()[i][j].getX() && controller.getEnemyBullets()[i][j].getX() <= controller.getPlayer().getX() + 22.5D) {
-                            flags.put("bullet." + i + j + ".isFire", false);
-                            flags.put("player.isDead", true);
-                        }
-                        // 一番下に行った時の処理
-                    } else {
-                        flags.put("bullet." + i + j + ".isFire", false);
-                        controller.getEnemyBullets()[i][j].setVisible(false);
-                        controller.getEnemyBullets()[i][j].setX(controller.getEnemies()[i][j].getX());
-                        controller.getEnemyBullets()[i][j].setY(controller.getEnemies()[i][j].getY() + 32.0D);
+                if(!flags.get("enemy." + i + j + ".isDead")) {
+                    // 敵の移動
+                    if(isASecondLater) {
+                        if(flags.get("enemy." + i + ".isTurned")) controller.getEnemies()[i][j].setX(controller.getEnemies()[i][j].getX() + 10.0D);
+                        else controller.getEnemies()[i][j].setX(controller.getEnemies()[i][j].getX() - 10.0D);
                     }
-                    // 乱数による発射調整
-                } else if(rand.nextInt(100) == 0) flags.put("bullet." + i + j + ".isFire", true);
+                    // 敵の弾管理
+                    // Y640.0は一番下
+                    if(flags.get("bullet." + i + j + ".isFire")) {
+                        if(controller.getEnemyBullets()[i][j].getY() < 640.0D) {
+                            controller.getEnemyBullets()[i][j].setVisible(true);
+                            controller.getEnemyBullets()[i][j].setY(controller.getEnemyBullets()[i][j].getY() + 4.0D);
+                            // プレイヤーの当たり判定
+                            if(controller.getEnemyBullets()[i][j].getY() > 600.0D && controller.getPlayer().getX() + 17.5D <= controller.getEnemyBullets()[i][j].getX() && controller.getEnemyBullets()[i][j].getX() <= controller.getPlayer().getX() + 22.5D) {
+                                flags.put("bullet." + i + j + ".isFire", false);
+                                flags.put("player.isDead", true);
+                            }
+                            // 一番下に行った時の処理
+                        } else {
+                            flags.put("bullet." + i + j + ".isFire", false);
+                            controller.getEnemyBullets()[i][j].setVisible(false);
+                            controller.getEnemyBullets()[i][j].setX(controller.getEnemies()[i][j].getX());
+                            controller.getEnemyBullets()[i][j].setY(controller.getEnemies()[i][j].getY() + 32.0D);
+                        }
+                        // 乱数による発射調整
+                    } else if(rand.nextInt(100) == 0) flags.put("bullet." + i + j + ".isFire", true);
+                } else controller.getEnemies()[i][j].setImage(new Image(Objects.requireNonNull(getClass().getResource("enemyd.png")).toString()));
             }
         }
         
