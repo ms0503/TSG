@@ -47,6 +47,48 @@ public class Controller implements Initializable {
     @FXML
     private ImageView bullet5;
     @FXML
+    private ImageView bullete00;
+    @FXML
+    private ImageView bullete01;
+    @FXML
+    private ImageView bullete02;
+    @FXML
+    private ImageView bullete03;
+    @FXML
+    private ImageView bullete04;
+    @FXML
+    private ImageView bullete05;
+    @FXML
+    private ImageView bullete06;
+    @FXML
+    private ImageView bullete10;
+    @FXML
+    private ImageView bullete11;
+    @FXML
+    private ImageView bullete12;
+    @FXML
+    private ImageView bullete13;
+    @FXML
+    private ImageView bullete14;
+    @FXML
+    private ImageView bullete15;
+    @FXML
+    private ImageView bullete16;
+    @FXML
+    private ImageView bullete20;
+    @FXML
+    private ImageView bullete21;
+    @FXML
+    private ImageView bullete22;
+    @FXML
+    private ImageView bullete23;
+    @FXML
+    private ImageView bullete24;
+    @FXML
+    private ImageView bullete25;
+    @FXML
+    private ImageView bullete26;
+    @FXML
     private ImageView enemy00;
     @FXML
     private ImageView enemy01;
@@ -121,11 +163,29 @@ public class Controller implements Initializable {
         return debug;
     }
     
+    /**
+     * コントローラ以外から敵のオブジェクトを操作する為に敵のオブジェクトを取得するメソッド
+     *
+     * @return 敵のオブジェクト00～26を格納した配列
+     */
     public ImageView[][] getEnemies() {
         return new ImageView[][] {
             {enemy00, enemy01, enemy02, enemy03, enemy04, enemy05, enemy06},
             {enemy10, enemy11, enemy12, enemy13, enemy14, enemy15, enemy16},
             {enemy20, enemy21, enemy22, enemy23, enemy24, enemy25, enemy26}
+        };
+    }
+    
+    /**
+     * コントローラ以外から敵の弾のオブジェクトを操作する為に敵の弾のオブジェクトを取得するメソッド
+     *
+     * @return 敵の弾のオブジェクト00～26を格納した配列
+     */
+    public ImageView[][] getEnemyBullets() {
+        return new ImageView[][] {
+            {bullete00, bullete01, bullete02, bullete03, bullete04, bullete05, bullete06},
+            {bullete10, bullete11, bullete12, bullete13, bullete14, bullete15, bullete16},
+            {bullete20, bullete21, bullete22, bullete23, bullete24, bullete25, bullete26}
         };
     }
     
