@@ -23,12 +23,16 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ms.sora.tsg.Controller">
     <MenuBar VBox.vgrow="NEVER">
         <Menu mnemonicParsing="false" text="ファイル">
-            <MenuItem mnemonicParsing="false" onAction="#onQuit" text="終了" />
+            <MenuItem mnemonicParsing="false" onAction="#onQuit" text="終了">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+            </accelerator></MenuItem>
         </Menu>
     </MenuBar>
     <AnchorPane prefHeight="415.0" prefWidth="701.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">

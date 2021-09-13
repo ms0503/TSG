@@ -27,6 +27,7 @@ module ms.sora.tsg {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires javafx.media;
     exports ms.sora.tsg;
     opens ms.sora.tsg to javafx.fxml;
 }
