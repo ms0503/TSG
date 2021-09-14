@@ -1,7 +1,7 @@
 /*
  * TSG - Tonami's Shooting Game
  *
- * Copyright (C) 2021 Sora Tonami
+ * Copyright (C) 2021 Sora Tonami. Some rights reserved.
  *
  * This file is part of TSG.
  *
