@@ -25,6 +25,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ms.sora.tsg.Controller">
     <MenuBar VBox.vgrow="NEVER">
@@ -35,151 +36,156 @@
             </accelerator></MenuItem>
         </Menu>
     </MenuBar>
-    <AnchorPane prefHeight="415.0" prefWidth="701.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
-        <ImageView fx:id="player" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="588.0" y="631.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+    <AnchorPane prefHeight="684.0" prefWidth="1280.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
+        <ImageView fx:id="player" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="588.0" y="631.0">
             <Image url="@player.png" />
         </ImageView>
-        <ImageView fx:id="bullet1" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="608.0" y="599.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullet1" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="608.0" y="599.0">
             <Image url="@bullet.png" />
         </ImageView>
-        <ImageView fx:id="bullet2" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="608.0" y="599.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullet2" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="608.0" y="599.0">
             <Image url="@bullet.png" />
         </ImageView>
-        <ImageView fx:id="bullet3" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="608.0" y="599.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullet3" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="608.0" y="599.0">
             <Image url="@bullet.png" />
         </ImageView>
-        <ImageView fx:id="bullet4" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="608.0" y="599.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullet4" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="608.0" y="599.0">
             <Image url="@bullet.png" />
         </ImageView>
-        <ImageView fx:id="bullet5" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="608.0" y="599.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullet5" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="608.0" y="599.0">
             <Image url="@bullet.png" />
         </ImageView>
         <Label fx:id="debug" layoutX="14.0" layoutY="14.0" text="DEBUG" textFill="WHITE" />
-        <ImageView fx:id="bullete00" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="182.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete00" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="182.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete01" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="332.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete01" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="332.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete02" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="482.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete02" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="482.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete03" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="632.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete03" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="632.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete04" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="782.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete04" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="782.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete05" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="932.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete05" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="932.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete06" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="1082.0" y="100.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete06" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="1082.0" y="100.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete10" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="182.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete10" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="182.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete11" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="332.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete11" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="332.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete12" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="482.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete12" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="482.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete13" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="632.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete13" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="632.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete14" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="782.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete14" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="782.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete15" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="932.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete15" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="932.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete16" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="1082.0" y="200.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete16" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="1082.0" y="200.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete20" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="182.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete20" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="182.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete21" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="332.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete21" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="332.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete22" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="482.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete22" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="482.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete23" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="632.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete23" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="632.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete24" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="782.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete24" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="782.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete25" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="932.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete25" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="932.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="bullete26" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" x="1082.0" y="300.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false">
+        <ImageView fx:id="bullete26" cache="true" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="32.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" smooth="false" visible="false" x="1082.0" y="300.0">
             <Image url="@bullete.png" />
         </ImageView>
-        <ImageView fx:id="enemy00" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="162.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy00" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="162.0" y="68.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy01" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="312.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy01" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="312.0" y="68.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy02" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="462.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy02" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="462.0" y="68.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy03" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="612.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy03" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="612.0" y="68.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy04" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="762.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy04" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="762.0" y="68.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy05" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="912.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy05" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="912.0" y="68.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy06" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="1062.0" y="68.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy06" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="1062.0" y="68.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy10" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="162.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy10" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="162.0" y="168.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy11" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="312.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy11" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="312.0" y="168.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy12" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="462.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy12" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="462.0" y="168.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy13" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="612.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy13" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="612.0" y="168.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy14" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="762.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy14" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="762.0" y="168.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy15" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="912.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy15" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="912.0" y="168.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy16" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="1062.0" y="168.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy16" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="1062.0" y="168.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy20" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="162.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy20" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="162.0" y="268.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy21" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="312.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy21" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="312.0" y="268.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy22" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="462.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy22" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="462.0" y="268.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy23" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="612.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy23" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="612.0" y="268.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy24" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="762.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy24" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="762.0" y="268.0">
             <Image url="@enemy1.png" />
         </ImageView>
-        <ImageView fx:id="enemy25" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="912.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy25" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="912.0" y="268.0">
             <Image url="@enemy2.png" />
         </ImageView>
-        <ImageView fx:id="enemy26" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" x="1062.0" y="268.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fx:id="enemy26" cacheHint="QUALITY" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" smooth="false" x="1062.0" y="268.0">
             <Image url="@enemy1.png" />
         </ImageView>
+        <Label fx:id="msg" alignment="CENTER" text="MESSAGE" textFill="#0083ff" visible="false" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="300.0">
+            <font>
+                <Font size="72.0" />
+            </font>
+        </Label>
     </AnchorPane>
 </VBox>

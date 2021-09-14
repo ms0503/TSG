@@ -134,6 +134,8 @@ public class Controller implements Initializable {
     private ImageView player;
     @FXML
     private Label debug;
+    @FXML
+    private Label msg;
     
     /**
      * {@inheritDoc}
@@ -187,6 +189,15 @@ public class Controller implements Initializable {
             {bullete10, bullete11, bullete12, bullete13, bullete14, bullete15, bullete16},
             {bullete20, bullete21, bullete22, bullete23, bullete24, bullete25, bullete26}
         };
+    }
+    
+    /**
+     * コントローラ以外からメッセージ用のラベルを操作する為にメッセージ用のラベルを取得するメソッド
+     *
+     * @return メッセージ用のラベル
+     */
+    public Label getMsg() {
+        return msg;
     }
     
     /**
