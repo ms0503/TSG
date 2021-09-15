@@ -50,6 +50,7 @@ public class Main extends Application {
     private Controller controller;
     private MediaPlayer mp;
     private Random rand;
+    private int score = 0;
     private long timerASecond = 0L;
     private long timerFifteenSeconds = 0L;
     private long start_ts = 0L;
@@ -165,6 +166,10 @@ public class Main extends Application {
         if(flags.get("enemy.isAllDead")) {
             controller.getMsg().setText("GAME CLEAR");
             controller.getMsg().setVisible(true);
+            score *= timeLimit / 1000000000L - ts / 1000000000L + start_ts / 1000000000L;
+            controller.getDebug().setText("Time: " + ((timeLimit / 1000000000L) - (ts / 1000000000L) + (start_ts / 1000000000L)) + "s / " + (timeLimit / 1000000000L) + "s");
+            controller.getDebug().setText(controller.getDebug().getText() + "\nScore: " + score);
+            controller.getDebug().setText(controller.getDebug().getText() + "\nPos: " + controller.getPlayer().getX() + " , " + controller.getPlayer().getY());
             gameLoop.stop();
             return;
         } else if(flags.get("player.isDead")) {
@@ -223,6 +228,7 @@ public class Main extends Application {
         
         /// 敵処理
         flags.put("enemy.isAllDead", true);
+        score = 0;
         for(int i = 0; i < 3; i++) {
             // 敵の折り返し
             if(isFifteenSecondsLater) flags.put("enemy." + i + ".isTurned", !flags.get("enemy." + i + ".isTurned"));
@@ -260,6 +266,7 @@ public class Main extends Application {
                     controller.getEnemyBullets()[i][j].setVisible(false);
                     controller.getEnemyBullets()[i][j].setX(controller.getEnemies()[i][j].getX());
                     controller.getEnemyBullets()[i][j].setY(controller.getEnemies()[i][j].getY() + 32.0D);
+                    score += 1000;
                 }
             }
         }
@@ -267,6 +274,7 @@ public class Main extends Application {
         /// 裏処理2
         // デバッグ用テキストの更新
         controller.getDebug().setText("Time: " + ((timeLimit / 1000000000L) - (ts / 1000000000L) + (start_ts / 1000000000L)) + "s / " + (timeLimit / 1000000000L) + "s");
+        controller.getDebug().setText(controller.getDebug().getText() + "\nScore: " + score);
         controller.getDebug().setText(controller.getDebug().getText() + "\nPos: " + controller.getPlayer().getX() + " , " + controller.getPlayer().getY());
         // タイマーのタイムスタンプの更新
         if(isASecondLater) timerASecond = ts;
