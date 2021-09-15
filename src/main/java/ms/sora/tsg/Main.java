@@ -45,6 +45,9 @@ import javafx.util.Duration;
 public class Main extends Application {
     private static final Map<String, Boolean> flags = Maps.newHashMap();
     private static AnimationTimer gameLoop;
+    // 初期値：4.0D
+    private static double enemyBulletSpeed = 4.0D;
+    private static double moveSpeed = 10.0D;
     // 1分(60秒 x ナノ秒変換の為の10億倍)
     private static long timeLimit = 60L * 1000000000L;
     private Controller controller;
@@ -63,7 +66,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         if(args.length > 0) for(String arg : args) {
             try {
-                timeLimit = Long.parseLong(arg);
+                String[] temp;
+                temp = arg.split(",");
+                moveSpeed = Double.parseDouble(temp[0]);
+                enemyBulletSpeed = Double.parseDouble(temp[1]);
             } catch(NumberFormatException ignored) {}
         }
         flags.put("bullet.00.isFire", false);
@@ -135,7 +141,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280.0D, 720.0D);
         controller = fxmlLoader.getController();
-        stage.setTitle("MCS2021 Shooting");
+        stage.setTitle("TSG");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.sizeToScene();
@@ -191,9 +197,8 @@ public class Main extends Application {
         
         /// プレイヤー処理
         // 移動受け付け
-        // 588
-        if(flags.get("player.isLeft") && controller.getPlayer().getX() > -2.0D) controller.getPlayer().setX(controller.getPlayer().getX() - 10.0D);
-        if(flags.get("player.isRight") && controller.getPlayer().getX() < 1228.0D) controller.getPlayer().setX(controller.getPlayer().getX() + 10.0D);
+        if(flags.get("player.isLeft") && controller.getPlayer().getX() > -2.0D) controller.getPlayer().setX(controller.getPlayer().getX() - moveSpeed);
+        if(flags.get("player.isRight") && controller.getPlayer().getX() < 1228.0D) controller.getPlayer().setX(controller.getPlayer().getX() + moveSpeed);
         // 弾管理
         for(int i = 0; i < 5; i++) {
             if(flags.get("bullet." + (i + 1) + ".isFire") && controller.getBullets()[i].getY() > 0.0D) {
@@ -245,7 +250,7 @@ public class Main extends Application {
                     if(flags.get("bullet." + i + j + ".isFire")) {
                         if(controller.getEnemyBullets()[i][j].getY() < 700.0D) {
                             controller.getEnemyBullets()[i][j].setVisible(true);
-                            controller.getEnemyBullets()[i][j].setY(controller.getEnemyBullets()[i][j].getY() + 4.0D);
+                            controller.getEnemyBullets()[i][j].setY(controller.getEnemyBullets()[i][j].getY() + enemyBulletSpeed);
                             // プレイヤーの当たり判定
                             if(controller.getEnemyBullets()[i][j].getY() > 631.0D && controller.getPlayer().getX() + 10.0D <= controller.getEnemyBullets()[i][j].getX() && controller.getPlayer().getX() + 31.0D >= controller.getEnemyBullets()[i][j].getX()) {
                                 flags.put("bullet." + i + j + ".isFire", false);
@@ -276,6 +281,8 @@ public class Main extends Application {
         controller.getDebug().setText("Time: " + ((timeLimit / 1000000000L) - (ts / 1000000000L) + (start_ts / 1000000000L)) + "s / " + (timeLimit / 1000000000L) + "s");
         controller.getDebug().setText(controller.getDebug().getText() + "\nScore: " + score);
         controller.getDebug().setText(controller.getDebug().getText() + "\nPos: " + controller.getPlayer().getX() + " , " + controller.getPlayer().getY());
+        controller.getDebug().setText(controller.getDebug().getText() + "\nSpeed: " + moveSpeed);
+        controller.getDebug().setText(controller.getDebug().getText() + "\nEnemyBulletSpeed: " + enemyBulletSpeed);
         // タイマーのタイムスタンプの更新
         if(isASecondLater) timerASecond = ts;
         if(isFifteenSecondsLater) timerFifteenSeconds = ts;
